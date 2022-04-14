@@ -1,18 +1,18 @@
 provider "aws" {
-    region = "us-east-1"
+    region = "ap-south-1"
 }
 
 terraform {
   backend "s3" {
-    bucket = "terraform-backend-spovedd"
+    bucket = "terraform-backend-spovedd1"
     key    = "terraform.tfstate"
     region = "us-east-1"
-    dynamodb_table = "spovedd-lock"
+    dynamodb_table = "spovedd-lock1"
   }
 }
 
 resource "aws_instance" "web" {
-  ami           = "ami-0947d2ba12ee1ff75"
+  ami           = "ami-0d2986f2e8c0f7d01"
   instance_type = "t2.micro"
 
   tags = {
